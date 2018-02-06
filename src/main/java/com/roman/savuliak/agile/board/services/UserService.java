@@ -1,5 +1,6 @@
 package com.roman.savuliak.agile.board.services;
 
+import com.roman.savuliak.agile.board.domain.Role;
 import com.roman.savuliak.agile.board.domain.User;
 import com.roman.savuliak.agile.board.persistence.SequenceDao;
 import com.roman.savuliak.agile.board.persistence.UserDao;
@@ -14,6 +15,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import javax.annotation.PostConstruct;
 
 /**
  * Created by Roman on 06.02.2018.
@@ -24,9 +26,13 @@ public class UserService implements UserDetailsService, IUserService{
     private UserDao userDao;
     @Autowired private SequenceDao sequenceDao;
 
+
+    /**
+     * create default user Name:admin, password:admin, Role:ADMIN
+     * */
 //    @PostConstruct
 //    public void init() {
-//                if (!userDao.findByUsername("admin").isPresent()) {
+//        if (!userDao.findByUsername("admin").isPresent()) {
 //            add(User.builder()
 //                    .username("admin")
 //                    .password(new BCryptPasswordEncoder().encode("admin"))
@@ -37,6 +43,7 @@ public class UserService implements UserDetailsService, IUserService{
 //                    .enabled(true)
 //                    .build());
 //        }
+//    }
 
     @Override
     public UserDetails loadUserByUsername(@NonNull String username) throws UsernameNotFoundException {
