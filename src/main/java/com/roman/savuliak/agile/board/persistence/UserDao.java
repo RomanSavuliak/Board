@@ -1,6 +1,7 @@
 package com.roman.savuliak.agile.board.persistence;
 
 import com.roman.savuliak.agile.board.domain.User;
+import com.roman.savuliak.agile.board.domain.UserField;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
