@@ -69,7 +69,6 @@ function setInProgressState(id) {
                 'X-CSRF-TOKEN': _csrf
             },
             success: function () {
-                console.log("Ticket set in-progress state")
                 return true;
             }
         }
@@ -121,7 +120,6 @@ function createTicket() {
         }),
         success: function (data) {
             addTicket($("#task").val(), $("#taskDesc").val(), "todo", data.id)
-            console.log(data)
         },
     });
 }
@@ -134,7 +132,6 @@ $("#add-button").on("click", function() {
 
 function getTickets() {
     var _csrf = $('meta[name=_csrf]').attr("content");
-    // console.log("loadTickets")
     $.ajax({
             type: 'GET',
             url: "/ticket/get/all",
@@ -142,7 +139,6 @@ function getTickets() {
                 'X-CSRF-TOKEN': _csrf
             },
             success: function (data) {
-                //    console.log(data)
                 data.forEach(function (item, i) {
                     addTicket(item.name, item.description, item.state, item.id)
                 });
