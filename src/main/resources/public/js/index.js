@@ -120,6 +120,8 @@ function createTicket() {
         }),
         success: function (data) {
             addTicket($("#task").val(), $("#taskDesc").val(), "todo", data.id)
+            $("#task").val("")
+            $("#taskDesc").val("")
         },
     });
 }
