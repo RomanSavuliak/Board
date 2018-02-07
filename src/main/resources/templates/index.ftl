@@ -19,7 +19,7 @@
         </div>
         <div class="flex">
             <div class="agile-board backlog">
-                <h2>Backlog</h2>
+                <h2>To Do</h2>
             </div>
             <div class="agile-board in-progress">
                 <h2>In progress</h2>
