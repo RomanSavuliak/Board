@@ -1,7 +1,4 @@
-server:
-  port: 8080
 spring:
-  mandatory-file-encoding: UTF-8
   data:
     mongodb:
-      database: board
+      uri: mongodb://board:0958202761@ds125938.mlab.com:25938/board
